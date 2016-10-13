@@ -1,8 +1,13 @@
-var http = require('http')
-    ,app = require('./config/express')
-    db = require('./config/database');
+//npm init: configuração do express
+//npm install express@4.13.3 --save   --> Grava dependencia do express junto com o nosso package json (Compartilhar nossa pasta public, css, html etc)
 
-http.createServer(app).listen(3000, function() {
-    console.log('Servidor estutando na porta: ' + this.address().port);
+
+var http = require('http'); 
+
+http.createServer(function(req, res){
+
+	res.end(req.url); 
+
+}).listen(3000, function(){
+	console.log("Ola");
 });
-

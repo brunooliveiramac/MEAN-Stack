@@ -7,11 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git", 
+    "url": "git+https://github.com/brunooliveiramac/MEAN-Stack"
+  },
+  "author": "olivbrua",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunooliveiramac/MEAN-Stack"
+  },
+  "homepage": "https://github.com/brunooliveiramac/MEAN-Stack",
   "dependencies": {
-    "body-parser": "^1.12.3",
-    "express": "^4.12.3",
-    "nedb": "^1.1.2"
+    "express": "^4.13.3"
   }
 }
