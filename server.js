@@ -1,13 +1,10 @@
 //npm init: configuração do express
-//npm install express@4.13.3 --save   --> Grava dependencia do express junto com o nosso package json (Compartilhar nossa pasta public, css, html etc)
+//npm install express@4.13.3 --save   --> Save express dependenc with our package json
 
 
-var http = require('http'); 
+var http = require('http');
+var app = require('./config/express'); //load express instance 
 
-http.createServer(function(req, res){
-
-	res.end(req.url); 
-
-}).listen(3000, function(){
-	console.log("Ola");
+http.createServer(app).listen(3000, function(){
+	console.log("Hello Node");
 });
