@@ -1,6 +1,7 @@
 //* BUSSINESS LOGIC
 
 var api = {};
+var cont = 3;
 
 var fotos = [
                 {_id: 1, titulo: 'Leão', url:'http://www.fundosanimais.com/Minis/leoes.jpg' },
@@ -33,6 +34,15 @@ api.removePorId = function(req, res){
        });
 
        res.sendStatus(204);
+};
+
+api.adiciona = function(req, res){
+        var foto = req.body; //bodyParser!!!
+        foto._id = ++cont;
+        fotos.push(foto); 
+
+        res.json(foto); 
+
 };
 
 //exporting api
