@@ -1,23 +1,11 @@
-module.exports = function(app) {
-        app.get('/v1/fotos', function(req, res) {
+//* FILE ROTES
 
-            var fotos = [
-                {_id: 1, titulo: 'Leão', url:'http://www.fundosanimais.com/Minis/leoes.jpg' },
-                {_id: 2, titulo: 'Leão 2', url:'http://www.fundosanimais.com/Minis/leoes.jpg' }
-            ];
-     
-            res.json(fotos);
+//var api = require('../api/foto'); <-- already loaded by consig on express.js - see line 7
 
-        });
+module.exports = function(app) { 
+        
+        var api = app.api.foto;// <-- loaded by consign
 
-        app.get('/v1/grupos', function(req, res) {
+        app.get('/v1/fotos', api.lista);
 
-            var grupos = [
-                { _id: 1, nome: 'esporte' }, 
-                { _id: 2, nome: 'lugares' }, 
-                { _id: 3, nome: 'animais' }
-            ];
-
-            res.json(grupos)
-        });
 };

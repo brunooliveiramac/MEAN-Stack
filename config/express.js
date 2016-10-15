@@ -8,8 +8,12 @@ var consign = require('consign');
 
 app.use(express.static('./public')); //share public folder, all project resource etc..
 
-//load all folders ... urls    //express instace
-consign().include('app/routes').into(app);
+//load all folders with their files .css and apis etc...  			
+consign({ cwd: 'app'})
+		 .include('api') 
+		 .then('routes') 
+		  //express instace
+		 .into(app);
 
 //require('../app/routes/foto')(app);
 //require('../app/routes/grupo')(app);
