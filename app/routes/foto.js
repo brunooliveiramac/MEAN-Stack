@@ -8,6 +8,8 @@ module.exports = function(app) {
 
         app.get('/v1/fotos', api.lista);
 
-        app.get('/v1/fotos/:id', api.buscaPorId);
+        app.route('/v1/fotos/:id') //depending on the verb that was passed, he knows what api to use
+            .get(api.buscaPorId)
+            .delete(api.removePorId);
 
 };

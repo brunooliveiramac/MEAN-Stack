@@ -6,5 +6,5 @@ var http = require('http');
 var app = require('./config/express'); //load express instance, will take care of requests
 
 http.createServer(app).listen(3000, function(){
-	console.log("Server Created");
+	console.log("Server Started");
 });

@@ -11,7 +11,7 @@ app.use(express.static('./public')); //share public folder, all project resource
 //load all folders with their files .css and apis etc...  			
 consign({ cwd: 'app'})
 		 .include('api') 
-		 .then('routes') 
+		 .then('routes')  
 		  //express instace
 		 .into(app);
 
