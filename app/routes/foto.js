@@ -12,6 +12,7 @@ module.exports = function(app) {
 
         app.route('/v1/fotos/:id') //depending on the verb that was passed, he knows what api to use
             .get(api.buscaPorId)
-            .delete(api.removePorId);
+            .delete(api.removePorId)
+            .put(api.atualiza);
 
 };
