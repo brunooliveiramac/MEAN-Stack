@@ -13,4 +13,9 @@
             res.json(grupos);
 };
 
+api.buscaPorId = function(req, res){
+
+			
+};
+
 module.exports = api;

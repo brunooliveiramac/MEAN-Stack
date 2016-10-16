@@ -12,7 +12,8 @@ app.use(bodyParser.json()); // <-- module used in order to popule the body from 
 
 //load all folders with their files .css and apis etc...  			
 consign({ cwd: 'app'})
-		 .include('api') 
+		 .include('models')
+		 .then('api') 
 		 .then('routes')  
 		  //express instace
 		 .into(app);
