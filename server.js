@@ -7,7 +7,7 @@ var app = require('./config/express'); //load express instance, will take care o
 require('./config/database')('localhost/alurapic'); 
 
 
-http.createServer(app).listen(3000, function(){
-	console.log("Server Started...");
+http.createServer(app).listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
