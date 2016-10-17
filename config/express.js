@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 //express configuration
 //middleware - filters 
 //make public the express instance
+ 
+app.set('secret', 'meanstack'); // <-- environment variable
 
 app.use(express.static('./public')); //share public folder, all project resource etc..
 app.use(bodyParser.json()); // <-- module used in order to popule the body from req
@@ -14,6 +16,7 @@ app.use(bodyParser.json()); // <-- module used in order to popule the body from 
 consign({ cwd: 'app'})
 		 .include('models')
 		 .then('api') 
+		 .then('routes/auth.js')  
 		 .then('routes')  
 		  //express instace
 		 .into(app);
